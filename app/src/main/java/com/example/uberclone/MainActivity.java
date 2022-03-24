@@ -78,8 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         ParseInstallation.getCurrentInstallation().saveInBackground();
         if (ParseUser.getCurrentUser() != null) {
-            // transition
-           // ParseUser.logOut();
+
             transitionToPassengerActivity();
             transitionToDriverRequestListActivity();
         }

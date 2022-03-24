@@ -137,7 +137,6 @@ public class DriverRequestListActivity extends AppCompatActivity implements View
 
             } else {
 
-               // locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
 
                 Location currentDriverLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
                 updateRequestsListView(currentDriverLocation);
@@ -189,10 +188,9 @@ public class DriverRequestListActivity extends AppCompatActivity implements View
                                     ParseGeoPoint pLocation = (ParseGeoPoint) nearRequest.get("passengerLocation");
                                     Double milesDistanceToPassenger = driverCurrentLocation.distanceInMilesTo(pLocation);
 
-                                    // 5.87594834787398943 * 10
 
-                                    //  58.246789 // Result
-                                    // 58
+
+
                                     float roundedDistanceValue = Math.round(milesDistanceToPassenger * 10) / 10;
 
                                     nearByDriveRequests.add("There are " + roundedDistanceValue + " miles to " + nearRequest.get("username"));
@@ -244,7 +242,6 @@ public class DriverRequestListActivity extends AppCompatActivity implements View
     public void onItemClick(AdapterView<?> parent, View view,
                             int position, long id) {
 
-      //  Toast.makeText(this, "Clicked", Toast.LENGTH_LONG).show();
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
 
